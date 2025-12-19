@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Produtos e Galeria - Aroeiras</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo"><a href="index.html">Aroeiras</a></h1>
+      <button class="menu-toggle" aria-label="Abrir Menu">☰</button>
+      <nav class="menu-principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="produtos.html" class="active">Produtos</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <h2>Nossos Produtos</h2>
+      <div class="produto-info">
+        <p>Cada peça Aroeiras é única, unindo a força do trabalho manual ao propósito da <strong>moda sustentável</strong>.</p>
+        
+        <div class="grid-produtos">
+            <div class="card-produto">
+                <img src="img/ecobag.JPG" alt="Ecobag Aroeiras">
+                <div class="detalhes-tecnicos">
+                    <h3>Ecobag</h3>
+                    <ul>
+                        <li><strong>Tamanho:</strong> 40 cm x 40 cm</li>
+                        <li><strong>Fecho:</strong> Zíper de 40 cm</li>
+                        <li><strong>Material:</strong> Tecido de algodão ou lona</li>
+                        <li><strong>Alça:</strong> Duas tiras de 62 cm x 10 cm</li>
+                        <li><strong>Bolso:</strong> Interno com duas divisórias (25 cm x 42 cm)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card-produto">
+                <img src="img/shoulder bag.JPG" alt="Shoulder Bag Aroeiras">
+                <div class="detalhes-tecnicos">
+                    <h3>Shoulder Bag</h3>
+                    <ul>
+                        <li><strong>Tamanho:</strong> 14 cm x 32 cm</li>
+                        <li><strong>Fecho:</strong> Botões imantados</li>
+                        <li><strong>Material:</strong> Tecido de algodão ou lona</li>
+                        <li><strong>Alça:</strong> 150 cm x 3 cm (com regulador de metal)</li>
+                        <li><strong>Bolso:</strong> Interno sem divisórias (16 cm x 18 cm)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card-produto">
+                <img src="img/necessarie.JPG" alt="Necessaire Aroeiras">
+                <div class="detalhes-tecnicos">
+                    <h3>Necessaire</h3>
+                    <ul>
+                        <li><strong>Tamanho:</strong> 30 cm x 30 cm</li>
+                        <li><strong>Fecho:</strong> Zíper de 30 cm</li>
+                        <li><strong>Material:</strong> Tecido de algodão ou lona</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid var(--color-beige); margin: 50px 0;">
+
+        <h2>Galeria do Projeto</h2>
+        <div class="galeria-fotos">
+            <img src="img/mulheres costurando.JPG" alt="Mulheres costurando">
+            <img src="img/foto com as mulheres.JPG" alt="Equipe Aroeiras">
+            <img src="img/oficina de costura.JPG" alt="Oficina de costura">
+            <img src="img/foto praiana.JPG" alt="Uso das ecobags em ambiente externo">
+            <img src="img/detalhes.JPG" alt="Detalhes do acabamento">
+            <img src="img/necessarie2.JPG" alt="Outras variações de necessaire">
+        </div>
+        
+        <div class="contato-produtos">
+            <h3>Como Comprar?</h3>
+            <p><strong>Todas as nossas vendas são realizadas via WhatsApp!</strong></p>
+            <a href="https://wa.me/553497337768" target="_blank" class="btn-whatsapp">Chamar no WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>© 2025 Aroeiras. Todos os direitos reservados.</p></div>
+  </footer>
+
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('.menu-principal').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

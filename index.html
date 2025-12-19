@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Início - Aroeiras</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="home-page"> 
+
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo"><a href="index.html">Aroeiras</a></h1>
+      <button class="menu-toggle" aria-label="Abrir Menu">☰</button>
+      <nav class="menu-principal">
+        <ul>
+          <li><a href="index.html" class="active">Início</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <div class="home-hero" style="text-align: center;">
+          
+          <h2>Tecendo Histórias,<br>Transformando Realidades</h2>
+          
+          <p>
+            A Aroeiras é um movimento de <strong>sustentabilidade</strong> e <strong>empoderamento feminino</strong> que transforma resíduos têxteis em acessórios artesanais com propósito social.
+          </p>
+          
+          <p style="margin-top: 20px; font-size: 1.1em; color: var(--color-olive); font-style: italic;">
+            Cada costura carrega uma história de dignidade.
+          </p>
+
+          <div class="video-container" style="margin-top: 50px; position: relative;">
+            <video id="video-aroeiras" width="100%" poster="img/.jpg" style="border-radius: 8px; box-shadow: 0 15px 40px rgba(0,0,0,0.15);">
+              <source src="video/apresentacao.mp4.mp4" type="video/mp4">
+              Seu navegador não suporta vídeos.
+            </video>
+            
+            <button onclick="playVideo()" class="btn-video-play">
+               ASSISTIR NOSSA HISTÓRIA
+            </button>
+          </div>
+
+          <div class="social-links" style="margin-top: 60px;">
+            <a href="https://www.instagram.com/aroeiras_/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://wa.me/553497337768" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a href="https://www.linkedin.com/company/aroeiras-sustentavel/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Aroeiras. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    function playVideo() {
+      const video = document.getElementById('video-aroeiras');
+      const btn = document.querySelector('.btn-video-play');
+      if (video.paused) {
+        video.play();
+        btn.style.display = 'none'; 
+        video.setAttribute("controls","controls"); 
+      }
+    }
+
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('.menu-principal').classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>

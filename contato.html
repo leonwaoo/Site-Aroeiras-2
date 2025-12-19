@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contato - Aroeiras</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body> 
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo"><a href="index.html">Aroeiras</a></h1>
+      
+      <button class="menu-toggle" aria-label="Abrir Menu">☰</button>
+      
+      <nav class="menu-principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="contato.html" class="active">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <h2>Fale Conosco</h2>
+      <p style="max-width: 600px; margin: 0 auto 30px;">
+        Envie sua mensagem ou utilize nossos canais de comunicação direta para orçamentos e parcerias.
+      </p>
+      
+      <div class="contato-form">
+        <form action="https://formspree.io/f/aroeirasmarketplace@gmail.com" method="POST">
+          <input type="text" name="nome" placeholder="Seu nome" required />
+          <input type="email" name="_replyto" placeholder="Seu e-mail" required />
+          <textarea name="mensagem" placeholder="Sua mensagem" rows="6" required></textarea>
+          
+          <input type="hidden" name="_subject" value="Nova mensagem de contato do Site Aroeiras">
+          
+          <button type="submit">Enviar Mensagem</button>
+        </form>
+      </div>
+      
+      <h3 style="text-align: center; margin-top: 50px; font-family: 'Julius Sans One';">Nossas Redes Sociais</h3>
+      <div class="social-links">
+        <a href="https://www.instagram.com/aroeiras_/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://wa.me/553497337768" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="https://www.linkedin.com/in/aroeiras_/" target="_blank" rel="noopener noreferrer">LinkedIn</a> 
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Aroeiras. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('.menu-principal').classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>

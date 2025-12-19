@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galeria - Aroeiras</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo"><a href="index.html">Aroeiras</a></h1>
+      
+      <button class="menu-toggle" aria-label="Abrir Menu">☰</button>
+      
+      <nav class="menu-principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="galeria.html" class="active">Galeria</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <h2>Nossa Galeria</h2>
+      <p style="max-width: 600px; margin: 0 auto 30px;">Um pouco do nosso trabalho, nossas mãos e nossas histórias de impacto.</p>
+      
+      <div class="galeria-fotos" style="/* Adicione aqui o seu CSS para a grade de fotos */">
+        <p style="font-family: 'Poppins', sans-serif;">(AS FOTOS SERÃO COLOCADAS AQUI - Use um layout de grade ou carrossel com o CSS)</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Aroeiras. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Funcionalidade do Menu Sanduíche
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('.menu-principal').classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
