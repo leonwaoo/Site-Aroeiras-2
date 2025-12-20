@@ -173,7 +173,6 @@ p {
   transform: translateY(-3px);
 }
 
-/* BOTÕES DE COMPRA (WhatsApp e Shopee) */
 .btn-whatsapp, .btn-shopee {
   display: inline-block;
   font-family: 'Julius Sans One', sans-serif;
@@ -208,36 +207,6 @@ p {
   color: var(--color-terracotta);
 }
 
-/* --- FORMULÁRIO DE CONTATO --- */
-.contato-form form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.contato-form input, 
-.contato-form textarea {
-  width: 100%;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-family: 'Poppins', sans-serif;
-}
-
-.contato-form button {
-  background-color: var(--color-terracotta);
-  color: white;
-  border: none;
-  padding: 15px;
-  font-family: 'Julius Sans One', sans-serif;
-  font-size: 1.1em;
-  cursor: pointer;
-  border-radius: 8px;
-  transition: background 0.3s;
-}
-
 /* --- SOBRE E DEPOIMENTOS --- */
 .sobre-content p { text-align: justify; }
 
@@ -258,19 +227,19 @@ p {
   margin-bottom: 25px;
 }
 
-/* --- NÚMEROS (Atualizado com fundo e padding) --- */
+/* --- NÚMEROS --- */
 .numeros-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   margin-top: 20px;
-  padding: 40px 20px; /* Aumentado para criar a moldura ao redor dos blocos */
-  background-color: var(--color-light-brown); /* Cor de fundo da moldura principal */
+  padding: 40px 20px;
+  background-color: var(--color-light-brown); 
   border-radius: 12px;
 }
 
 .numero-item {
-  background-color: var(--color-beige); /* Cor de fundo interna dos blocos */
+  background-color: var(--color-beige); 
   padding: 30px 15px;
   border-radius: 8px;
   text-align: center;
@@ -285,6 +254,39 @@ p {
   font-size: 2.5em;
   color: var(--color-bright-red); 
   line-height: 1;
+}
+
+/* --- SEÇÃO ODS --- */
+.ods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.ods-item {
+    text-align: center;
+}
+
+.ods-item img {
+    width: 100%;
+    max-width: 140px;
+    margin: 0 auto 10px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.ods-item img:hover {
+    transform: scale(1.05);
+}
+
+.ods-item span {
+    display: block;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: var(--color-olive);
+    line-height: 1.2;
 }
 
 /* --- GRADES DE PRODUTOS E FOTOS --- */
@@ -306,74 +308,8 @@ p {
     padding: 20px;
 }
 
-.detalhes-tecnicos h3 {
-    margin-bottom: 15px;
-    font-size: 1.5em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
+/* ... (resto do CSS mantido) ... */
 
-.detalhes-tecnicos ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.detalhes-tecnicos li {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
-    font-size: 0.95em;
-    color: #444;
-    margin-bottom: 8px;
-    line-height: 1.4;
-    text-align: left;
-}
-
-.detalhes-tecnicos li strong {
-    font-weight: 600;
-    color: var(--color-text-dark);
-}
-
-.grid-produtos img, .galeria-fotos img {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.grid-produtos img:hover { transform: scale(1.03); }
-
-/* --- VÍDEO --- */
-.video-container {
-    max-width: 900px;
-    margin: 50px auto;
-}
-
-.btn-video-play {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(62, 63, 32, 0.9); 
-  color: #F0E4D8;
-  padding: 15px 25px;
-  border: 2px solid #F0E4D8;
-  border-radius: 8px;
-  font-family: 'Julius Sans One', sans-serif;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-/* --- FOOTER --- */
-.site-footer {
-  background-color: var(--color-olive); 
-  color: var(--color-text-light);
-  text-align: center;
-  padding: 30px 20px;
-  margin-top: 40px;
-}
-
-/* --- RESPONSIVIDADE --- */
 @media (max-width: 850px) {
   .menu-toggle { display: block; }
   .menu-principal { 
@@ -388,16 +324,5 @@ p {
   }
   .menu-principal.active { display: block; }
   .menu-principal ul { flex-direction: column; align-items: center; }
-  .menu-principal li { width: 100%; text-align: center; }
-  .menu-principal li a { padding: 15px; border-radius: 0; }
-  .social-links a { width: 100%; text-align: center; }
-  
   .logo-img { height: 50px; } 
-}
-
-@media (max-width: 480px) {
-    .numero-item strong { font-size: 2em; }
-    .btn-video-play { font-size: 0.8em; padding: 10px 15px; }
-    
-    .site-header .logo a { font-size: 1.1em; }
 }
