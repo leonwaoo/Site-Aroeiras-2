@@ -4,9 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Início - Aroeiras</title>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body class="home-page"> 
@@ -19,7 +21,9 @@
           <span>Aroeiras</span>
         </a>
       </h1>
+      
       <button class="menu-toggle" aria-label="Abrir Menu">☰</button>
+      
       <nav class="menu-principal">
         <ul>
           <li><a href="index.html" class="active">Início</a></li>
@@ -34,15 +38,19 @@
   <main class="main-content">
     <div class="container">
       <div class="home-hero" style="text-align: center;">
+          
           <h2>Tecendo Histórias,<br>Transformando Realidades</h2>
-          <p>O Aroeiras é uma negócio de impacto socioambiental que nasceu do encontro entre a força de mulheres e o desejo de transformar a realidade por meio da costura.</p>
+          
+          <p>
+            O Aroeiras é uma negócio de impacto socioambiental que nasceu do encontro entre a força de mulheres e o desejo de transformar a realidade por meio da costura.
+          </p>
           
           <p style="margin-top: 20px; font-size: 1.1em; color: var(--color-olive); font-style: italic;">
             Inspirada nas resistentes árvores do cerrado, a marca simboliza resiliência, renovação e propósito.
           </p>
 
           <div class="video-container" style="margin-top: 50px; position: relative;">
-            <video id="video-aroeiras" width="100%" poster="img/detalhes.jpg" style="border-radius: 8px; box-shadow: 0 15px 40px rgba(0,0,0,0.15);">
+            <video id="video-aroeiras" width="100%" muted poster="img/detalhes.jpg" style="border-radius: 8px; box-shadow: 0 15px 40px rgba(0,0,0,0.15);">
               <source src="video/apresentacao.mp4" type="video/mp4">
               Seu navegador não suporta vídeos.
             </video>
@@ -68,25 +76,36 @@
   </footer>
 
   <script>
-    // FUNÇÃO PARA O VÍDEO FUNCIONAR
+    // Função para iniciar o vídeo corretamente
     function playVideo() {
       const video = document.getElementById('video-aroeiras');
       const btn = document.querySelector('.btn-video-play');
 
       if (video) {
+        // Remove o mudo para permitir som no play disparado pelo usuário
+        video.muted = false; 
+        
         video.play().then(() => {
-          btn.style.display = 'none'; // Esconde o botão se o vídeo começar
-          video.setAttribute("controls", "controls"); // Mostra os controles de volume/tempo
+          btn.style.display = 'none'; 
+          video.setAttribute("controls", "controls"); 
         }).catch(error => {
-          console.error("Erro ao reproduzir o vídeo:", error);
+          console.error("Erro ao reproduzir vídeo:", error);
+          // Fallback se o navegador bloquear som de imediato
+          video.muted = true;
+          video.play();
         });
       }
     }
 
-    // SCRIPT PARA O MENU NO CELULAR
-    document.querySelector('.menu-toggle').addEventListener('click', () => {
-      document.querySelector('.menu-principal').classList.toggle('active');
-    });
+    // Script para o Menu Mobile funcionar no celular
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuNav = document.querySelector('.menu-principal');
+
+    if (menuToggle) {
+      menuToggle.addEventListener('click', function() {
+        menuNav.classList.toggle('active');
+      });
+    }
   </script>
 
 </body>
