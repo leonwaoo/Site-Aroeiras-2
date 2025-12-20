@@ -3,93 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aroeiras - Moda Sustentável e Impacto Social</title>
+  <title>Início - Aroeiras</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="css/style.css" />
-
-  <style>
-    /* Estilos para a sobreposição do vídeo */
-    .video-container {
-      position: relative;
-      max-width: 900px;
-      margin: 40px auto;
-      cursor: pointer;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    }
-
-    .video-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.45);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 2;
-      transition: opacity 0.5s ease;
-    }
-
-    .video-overlay img.logo-sobre {
-      width: 100px;
-      margin-bottom: 20px;
-      border-radius: 50%;
-    }
-
-    .play-icon {
-      width: 60px;
-      height: 60px;
-      background: var(--color-terracotta, #a65d47);
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 15px;
-      transition: transform 0.3s;
-    }
-
-    .play-icon::after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 15px 0 15px 25px;
-      border-color: transparent transparent transparent white;
-      margin-left: 5px;
-    }
-
-    .video-overlay span {
-      color: white;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 0.9rem;
-    }
-
-    /* Esconde a sobreposição ao dar play */
-    .video-container.playing .video-overlay {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .video-wrapper video {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-  </style>
 </head>
-<body>
+<body class="home-page"> 
 
   <header class="site-header">
     <div class="container">
@@ -99,7 +21,9 @@
           <span>Aroeiras</span>
         </a>
       </h1>
+      
       <button class="menu-toggle" aria-label="Abrir Menu">☰</button>
+      
       <nav class="menu-principal">
         <ul>
           <li><a href="index.html" class="active">Início</a></li>
@@ -113,30 +37,34 @@
 
   <main class="main-content">
     <div class="container">
-      <h2 style="margin-top: 20px;">Tecendo Histórias, <br>Transformando Vidas.</h2>
-      
-      <p class="destaque" style="text-align: center; max-width: 750px; margin: 0 auto 10px;">
-        Negócio de impacto socioambiental em Uberlândia que transforma retalhos em moda sustentável através das mãos de mulheres incríveis.
-      </p>
-
-      <div class="video-container" id="videoContainer" onclick="playVideo()">
-          <div class="video-overlay" id="videoOverlay">
-              <img src="img/logo.JPG" alt="Logo Aroeiras" class="logo-sobre">
-              <div class="play-icon"></div>
-              <span>Conheça nossa história</span>
-          </div>
+      <div class="home-hero" style="text-align: center;">
           
-          <div class="video-wrapper">
-              <video id="meuVideo" poster="img/logo.JPG">
-                  <source src="video/apresentacao.mp4" type="video/mp4">
-                  Seu navegador não suporta a tag de vídeo.
-              </video>
-          </div>
-      </div>
+          <h2>Tecendo Histórias,<br>Transformando Realidades</h2>
+          
+          <p>
+            O Aroeiras é um negócio de impacto socioambiental que nasceu do encontro entre a força de mulheres e o desejo de transformar a realidade por meio da costura.
+          </p>
+          
+          <p style="margin-top: 20px; font-size: 1.1em; color: var(--color-olive); font-style: italic;">
+            Unindo sustentabilidade, geração de renda e empoderamento feminino, o Aroeiras transforma resíduos têxteis da indústria da moda em bolsas e acessórios cheios de significado.
+          </p>
 
-      <div class="botoes-compra" style="margin-top: 30px;">
-          <a href="produtos.html" class="btn-shopee">Ver Coleção de Produtos</a>
-          <a href="sobre.html" class="btn-whatsapp" style="background-color: #a65d47; border-color: #a65d47;">Nossa História Completa</a>
+          <div class="video-container" style="margin-top: 50px; position: relative; background-color: #000; border-radius: 8px;">
+            <video id="video-aroeiras" width="100%" muted style="border-radius: 8px; box-shadow: 0 15px 40px rgba(0,0,0,0.15); display: block;">
+              <source src="video/apresentacao.mp4" type="video/mp4">
+              Seu navegador não suporta vídeos.
+            </video>
+            
+            <button onclick="playVideo()" class="btn-video-play">
+               ASSISTIR NOSSA HISTÓRIA
+            </button>
+          </div>
+
+          <div class="social-links" style="margin-top: 60px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+            <a href="https://www.instagram.com/aroeiras_/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://wa.me/553497337768" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a href="https://shopee.com.br/aroeiras" target="_blank" rel="noopener noreferrer">Loja Shopee</a>
+          </div>
       </div>
     </div>
   </main>
@@ -148,21 +76,30 @@
   </footer>
 
   <script>
-    // Menu mobile
-    document.querySelector('.menu-toggle').addEventListener('click', () => {
-      document.querySelector('.menu-principal').classList.toggle('active');
-    });
-
-    // Função para iniciar o vídeo
     function playVideo() {
-      const video = document.getElementById('meuVideo');
-      const container = document.getElementById('videoContainer');
-      
-      if (video.paused) {
-        video.play();
-        video.controls = true;
-        container.classList.add('playing');
+      const video = document.getElementById('video-aroeiras');
+      const btn = document.querySelector('.btn-video-play');
+
+      if (video) {
+        video.muted = false; 
+        video.play().then(() => {
+          btn.style.display = 'none'; 
+          video.setAttribute("controls", "controls"); 
+        }).catch(error => {
+          console.error("Erro ao reproduzir vídeo:", error);
+          video.muted = true;
+          video.play();
+        });
       }
+    }
+
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuNav = document.querySelector('.menu-principal');
+
+    if (menuToggle) {
+      menuToggle.addEventListener('click', function() {
+        menuNav.classList.toggle('active');
+      });
     }
   </script>
 
