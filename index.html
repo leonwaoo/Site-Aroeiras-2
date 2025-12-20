@@ -1,106 +1,40 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Início - Aroeiras</title>
+<div class="video-container" style="margin-top: 50px; position: relative;">
+  <video id="video-aroeiras" width="100%" poster="img/detalhes.jpg" style="border-radius: 8px; box-shadow: 0 15px 40px rgba(0,0,0,0.15);">
+    <source src="video/apresentacao.mp4" type="video/mp4">
+    Seu navegador não suporta vídeos.
+  </video>
   
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body class="home-page"> 
+  <button onclick="playVideo()" class="btn-video-play">
+     ASSISTIR NOSSA HISTÓRIA
+  </button>
+</div>
 
-  <header class="site-header">
-    <div class="container">
-      <h1 class="logo">
-        <a href="index.html">
-          <img src="img/logo.JPG" alt="Logo Aroeiras" class="logo-img">
-          <span>Aroeiras</span>
-        </a>
-      </h1>
-      
-      <button class="menu-toggle" aria-label="Abrir Menu">☰</button>
-      
-      <nav class="menu-principal">
-        <ul>
-          <li><a href="index.html" class="active">Início</a></li>
-          <li><a href="produtos.html">Produtos</a></li>
-          <li><a href="sobre.html">Sobre Nós</a></li>
-          <li><a href="contato.html">Contato</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<script>
+  function playVideo() {
+    const video = document.getElementById('video-aroeiras');
+    const btn = document.querySelector('.btn-video-play');
 
-  <main class="main-content">
-    <div class="container">
-      <div class="home-hero" style="text-align: center;">
-          
-          <h2>Tecendo Histórias,<br>Transformando Realidades</h2>
-          
-          <p>
-            O Aroeiras é uma negócio de impacto socioambiental que nasceu do encontro entre a força de mulheres e o desejo de transformar a realidade por meio da costura.
-          </p>
-          
-          <p style="margin-top: 20px; font-size: 1.1em; color: var(--color-olive); font-style: italic;">
-            Inspirada nas resistentes árvores do cerrado, a marca simboliza resiliência, renovação e propósito.
-          </p>
-
-          <div class="video-container" style="margin-top: 50px; position: relative;">
-            <video id="video-aroeiras" width="100%" poster="img/detalhes.jpg" style="border-radius: 8px; box-shadow: 0 15px 40px rgba(0,0,0,0.15);">
-              <source src="video/apresentacao.mp4" type="video/mp4">
-              Seu navegador não suporta vídeos.
-            </video>
-            
-            <button onclick="playVideo()" class="btn-video-play">
-               ASSISTIR NOSSA HISTÓRIA
-            </button>
-          </div>
-
-          <div class="social-links" style="margin-top: 60px;">
-            <a href="https://www.instagram.com/aroeiras_/" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="https://wa.me/553497337768" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-            <a href="https://shopee.com.br/aroeiras" target="_blank" rel="noopener noreferrer">Loja Shopee</a>
-          </div>
-      </div>
-    </div>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 Aroeiras. Todos os direitos reservados.</p>
-    </div>
-  </footer>
-
-  <script>
-    // 1. Função para dar play no vídeo
-    function playVideo() {
-      const video = document.getElementById('video-aroeiras');
-      const btn = document.querySelector('.btn-video-play');
-
-      if (video) {
-        video.play().then(() => {
-          btn.style.display = 'none'; // Esconde o botão se o vídeo começar
-          video.setAttribute("controls", "controls"); // Mostra os controles nativos
-        }).catch(error => {
-          console.error("Erro ao reproduzir o vídeo:", error);
-        });
-      }
-    }
-
-    // 2. Script para o Menu Mobile funcionar (Abas no celular)
-    const toggleBtn = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.menu-principal');
-
-    if (toggleBtn) {
-      toggleBtn.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
+    if (video) {
+      // Tenta reproduzir o vídeo
+      video.play().then(() => {
+        btn.style.display = 'none'; 
+        video.setAttribute("controls", "controls"); 
+      }).catch(error => {
+        // Se falhar, exibe o erro no console e tenta mostrar controles
+        console.error("Erro ao reproduzir:", error);
+        video.setAttribute("controls", "controls");
+        btn.style.display = 'none';
       });
     }
-  </script>
+  }
 
-</body>
-</html>
+  // Script do Menu Mobile
+  const toggleBtn = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('.menu-principal');
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', function() {
+      navMenu.classList.toggle('active');
+    });
+  }
+</script>
