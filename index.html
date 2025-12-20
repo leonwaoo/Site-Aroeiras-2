@@ -50,7 +50,7 @@
           </p>
 
           <div class="video-container" style="margin-top: 50px; position: relative;">
-            <video id="video-aroeiras" width="100%" muted poster="img/detalhes.jpg" style="border-radius: 8px; box-shadow: 0 15px 40px rgba(0,0,0,0.15);">
+            <video id="video-aroeiras" width="100%" muted poster="img/detalhes.JPG" style="border-radius: 8px; box-shadow: 0 15px 40px rgba(0,0,0,0.15);">
               <source src="video/apresentacao.mp4" type="video/mp4">
               Seu navegador não suporta vídeos.
             </video>
@@ -76,31 +76,25 @@
   </footer>
 
   <script>
-    // Função para iniciar o vídeo corretamente
     function playVideo() {
       const video = document.getElementById('video-aroeiras');
       const btn = document.querySelector('.btn-video-play');
 
       if (video) {
-        // Remove o mudo para permitir som no play disparado pelo usuário
         video.muted = false; 
-        
         video.play().then(() => {
           btn.style.display = 'none'; 
           video.setAttribute("controls", "controls"); 
         }).catch(error => {
-          console.error("Erro ao reproduzir vídeo:", error);
-          // Fallback se o navegador bloquear som de imediato
+          console.error("Erro ao reproduzir:", error);
           video.muted = true;
           video.play();
         });
       }
     }
 
-    // Script para o Menu Mobile funcionar no celular
     const menuToggle = document.querySelector('.menu-toggle');
     const menuNav = document.querySelector('.menu-principal');
-
     if (menuToggle) {
       menuToggle.addEventListener('click', function() {
         menuNav.classList.toggle('active');
