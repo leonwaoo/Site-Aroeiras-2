@@ -173,23 +173,39 @@ p {
   transform: translateY(-3px);
 }
 
-.btn-whatsapp {
+/* BOTÕES DE COMPRA (WhatsApp e Shopee) */
+.btn-whatsapp, .btn-shopee {
   display: inline-block;
-  background-color: var(--color-whatsapp);
-  color: var(--color-text-light);
   font-family: 'Julius Sans One', sans-serif;
   text-transform: uppercase;
   padding: 14px 30px;
   border-radius: 50px;
-  margin-top: 15px;
+  margin: 10px 5px;
   transition: all 0.3s ease;
   text-decoration: none;
-  border: 1px solid var(--color-whatsapp);
+  font-weight: 600;
+}
+
+.btn-whatsapp {
+  background-color: var(--color-olive);
+  color: var(--color-text-light);
+  border: 1px solid var(--color-olive);
 }
 
 .btn-whatsapp:hover {
   background-color: transparent;
   color: var(--color-olive);
+}
+
+.btn-shopee {
+  background-color: var(--color-terracotta);
+  color: var(--color-text-light);
+  border: 1px solid var(--color-terracotta);
+}
+
+.btn-shopee:hover {
+  background-color: transparent;
+  color: var(--color-terracotta);
 }
 
 /* --- FORMULÁRIO DE CONTATO --- */
