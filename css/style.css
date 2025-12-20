@@ -80,10 +80,21 @@ p {
   flex-wrap: wrap;
 }
 
+/* ALTERAÇÃO REALIZADA: Preparado para a logo ao lado e nome proporcional */
 .site-header .logo a {
   color: var(--color-text-light); 
   text-decoration: none;
-  font-size: 1.8em; 
+  font-size: 1.4em; 
+  display: flex;    
+  align-items: center;  
+  gap: 12px;        
+}
+
+/* NOVA CLASSE: Logo aumentada para 80px conforme solicitado */
+.logo-img {
+  height: 80px;     
+  width: auto;
+  border-radius: 4px;
 }
 
 .menu-principal ul {
@@ -164,23 +175,60 @@ p {
   transform: translateY(-3px);
 }
 
-.btn-whatsapp {
+/* --- SEÇÃO DE COMPRAS E BOTÕES ATUALIZADA --- */
+
+/* Container para alinhar botões lado a lado */
+.botoes-compra {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.btn-whatsapp, .btn-shopee {
   display: inline-block;
-  background-color: var(--color-whatsapp);
   color: var(--color-text-light);
   font-family: 'Julius Sans One', sans-serif;
   text-transform: uppercase;
   padding: 14px 30px;
   border-radius: 50px;
-  margin-top: 15px;
   transition: all 0.3s ease;
   text-decoration: none;
-  border: 1px solid var(--color-whatsapp);
+  font-size: 0.9em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: 1px solid transparent;
+}
+
+.btn-whatsapp {
+  background-color: var(--color-whatsapp);
+  border-color: var(--color-whatsapp);
 }
 
 .btn-whatsapp:hover {
   background-color: transparent;
   color: var(--color-olive);
+}
+
+/* Estilo Shopee */
+.btn-shopee {
+  background-color: #EE4D2D; /* Laranja oficial Shopee */
+  border-color: #EE4D2D;
+}
+
+.btn-shopee:hover {
+  background-color: transparent;
+  color: #EE4D2D;
+}
+
+/* Texto de destaque para Grandes Encomendas */
+.texto-encomendas {
+  color: var(--color-terracotta);
+  font-weight: 600;
+  margin-top: 20px;
+  font-size: 1.1em;
+  display: block;
 }
 
 /* --- FORMULÁRIO DE CONTATO --- */
@@ -262,7 +310,7 @@ p {
   line-height: 1;
 }
 
-/* --- GRADES DE PRODUTOS E FOTOS (ALTERAÇÕES APLICADAS) --- */
+/* --- GRADES DE PRODUTOS E FOTOS --- */
 .grid-produtos, .galeria-fotos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -277,7 +325,6 @@ p {
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* RETIRANDO AS BOLINHAS E MELHORANDO A FONTE DA DESCRIÇÃO */
 .detalhes-tecnicos {
     padding: 20px;
 }
@@ -290,19 +337,19 @@ p {
 }
 
 .detalhes-tecnicos ul {
-    list-style: none; /* RETIRA AS BOLINHAS */
-    padding: 0;       /* ALINHA À ESQUERDA */
+    list-style: none;
+    padding: 0;
     margin: 0;
 }
 
 .detalhes-tecnicos li {
     font-family: 'Poppins', sans-serif;
-    font-weight: 300;       /* Fonte mais leve/elegante */
+    font-weight: 300;
     font-size: 0.95em;
     color: #444;
     margin-bottom: 8px;
     line-height: 1.4;
-    text-align: left;       /* Alinhamento profissional à esquerda */
+    text-align: left;
 }
 
 .detalhes-tecnicos li strong {
@@ -367,9 +414,13 @@ p {
   .menu-principal li { width: 100%; text-align: center; }
   .menu-principal li a { padding: 15px; border-radius: 0; }
   .social-links a { width: 100%; text-align: center; }
+  
+  .logo-img { height: 50px; } /* Ajuste de tamanho para celular */
 }
 
 @media (max-width: 480px) {
     .numero-item strong { font-size: 2em; }
     .btn-video-play { font-size: 0.8em; padding: 10px 15px; }
+    
+    .site-header .logo a { font-size: 1.1em; }
 }
